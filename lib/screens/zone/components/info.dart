@@ -13,75 +13,57 @@ class Info extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return SizedBox(
-      height: size.height * 0.35,
-      child: Stack(
-        children: <Widget>[
-          ClipPath(
-            clipper: CustomShape(),
-            child: Container(
-              height: size.height * 0.2 - 27,
-              color: kPrimaryColor,
-            ),
+    return Column(
+      children: [
+        Container(
+          height: 900,
+          child: Stack(
+            children: <Widget>[
+              ClipPath(
+                clipper: CustomShape(),
+                child: Container(
+                  height: 140,
+                  color: kPrimaryColor,
+                ),
+              ),
+              Center(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.all(20),
+                      // margin: EdgeInsets.only(
+                      //   bottom: 10,
+                      // ),
+                      height: 130,
+                      width: 130,
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          new BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 5,
+                            blurRadius: 7,
+                            offset: Offset(0, 3), // changes position of shadow
+                          ),
+                        ],
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: Colors.white,
+                          width: 5,
+                        ),
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage(image),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                Container(
-                  margin: EdgeInsets.only(
-                    bottom: 10,
-                  ),
-                  height: size.height * 0.2,
-                  width: size.width * 0.3,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: Colors.white,
-                      width: 5,
-                    ),
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage(image),
-                    ),
-                  ),
-                ),
-                Text(
-                  name,
-                  style: TextStyle(
-                    fontFamily: "Kanit",
-                    fontSize: 22,
-                    color: kTextColor,
-                  ),
-                ),
-                Text(
-                  email,
-                  style: TextStyle(
-                    fontFamily: "Kanit",
-                    fontWeight: FontWeight.w400,
-                    color: kTextColor,
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "เสาร์, 6 เม.ย. 62",
-                  style: TextStyle(
-                    fontFamily: "Kanit",
-                    fontSize: 20,
-                    color: kTextColor,
-                  ),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-              ],
-            ),
-          )
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

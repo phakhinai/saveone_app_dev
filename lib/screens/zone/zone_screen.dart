@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:saveone_app/components/my_bottom_nav_bar.dart';
-import 'package:saveone_app/constants.dart';
 import 'package:saveone_app/screens/zone/components/body.dart';
 
 class ZoneScreen extends StatelessWidget {
@@ -12,26 +9,7 @@ class ZoneScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: buildAppBar(),
-      // body: Body(),
-      // bottomNavigationBar: Container(
-      //   color: Colors.black,
-      //   height: 80,
-      // ),
-
-      body: Container(
-        height: size.height * .4,
-        child: Stack(
-          children: <Widget>[
-            ClipPath(
-              clipper: CustomShape(),
-              child: Container(
-                height: size.height * 0.2 - 27,
-                color: kPrimaryColor,
-              ),
-            ),
-          ],
-        ),
-      ),
+      body: Body(),
       // bottomNavigationBar: MyBottomNavBar(),
     );
   }
@@ -39,20 +17,17 @@ class ZoneScreen extends StatelessWidget {
   AppBar buildAppBar() {
     return AppBar(
       elevation: 0,
-      title: const Text("เลือกโซน"),
+      title: const Text(
+        "เลือกโซน",
+      ),
+      centerTitle: true,
       leading: IconButton(
-        icon: SvgPicture.asset(
-          "assets/icons/menu.svg",
-          color: kTextLigntColor,
-        ),
+        icon: Icon(Icons.menu),
         onPressed: () {},
       ),
       actions: <Widget>[
         IconButton(
-          icon: SvgPicture.asset(
-            "assets/icons/user-icon.svg",
-            color: kTextLigntColor,
-          ),
+          icon: Icon(Icons.notifications),
           onPressed: () {},
         )
       ],

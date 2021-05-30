@@ -8,7 +8,7 @@ class GridZone extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Expanded(
       child: GridView.count(
         padding: const EdgeInsets.all(20),
         crossAxisCount: 2,
@@ -17,46 +17,45 @@ class GridZone extends StatelessWidget {
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
-              border: Border.all(
-                color: kBorderColor,
-                width: 1,
-              )
-            ),
-          ),Container(
+                border: Border.all(
+              color: kBorderColor,
+              width: 1,
+            )),
+          ),
+          Container(
             decoration: BoxDecoration(
-              border: Border.all(
-                color: kBorderColor,
-                width: 1,
-              )
-            ),
-          ),Container(
+                border: Border.all(
+              color: kBorderColor,
+              width: 1,
+            )),
+          ),
+          Container(
             decoration: BoxDecoration(
-              border: Border.all(
-                color: kBorderColor,
-                width: 1,
-              )
-            ),
-          ),Container(
+                border: Border.all(
+              color: kBorderColor,
+              width: 1,
+            )),
+          ),
+          Container(
             decoration: BoxDecoration(
-              border: Border.all(
-                color: kBorderColor,
-                width: 1,
-              )
-            ),
-          ),Container(
+                border: Border.all(
+              color: kBorderColor,
+              width: 1,
+            )),
+          ),
+          Container(
             decoration: BoxDecoration(
-              border: Border.all(
-                color: kBorderColor,
-                width: 1,
-              )
-            ),
-          ),Container(
+                border: Border.all(
+              color: kBorderColor,
+              width: 1,
+            )),
+          ),
+          Container(
             decoration: BoxDecoration(
-              border: Border.all(
-                color: kBorderColor,
-                width: 1,
-              )
-            ),
+                border: Border.all(
+              color: kBorderColor,
+              width: 1,
+            )),
           ),
         ],
       ),
